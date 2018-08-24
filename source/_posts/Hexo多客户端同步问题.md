@@ -29,16 +29,24 @@ categories: 开发工具
   ```
   此阶段碰到的bug:
   因为之前已经clone过next项目到themes/next中，所以直接操作第三步第二条命令时会出现下面错误  
-  ![  subtree add 报错](\images\Hexo多客户端同步问题\1.png)  
+  ![subtree add 报错](\images\Hexo多客户端同步问题\3.png)  
   尝试删除next文件夹然后执行（记得将自己修改过的例如_config.yml备份），会出现下面错误  
-  ![  删除next后报错](/images/2018/08/1.png)  
+  ![删除next后报错](/images/2018/08/4.png)  
   删除本地仓库的themes/next 并提交到远程仓库以保证working tree处于未修改状态
-  ![  完成](/images/2018/08/1.png)
+  ![完成](/images/2018/08/5.png)
   至此已将自己fork的next主题当成subtree添加到项目中  
 3. 推送next中的修改  
-  其实对整个项目的pull、push同样会对子项目起作用，这里记录一下单独对next子项目进行pull、push操作  
+  其实对整个项目的pull、push同样会对子项目起作用(比较推荐)，这里记录一下单独对next子项目进行pull、push操作  
   我们将目录中的next/_config.yml替换为之前备份好的，然后执行下面命令推送到远程仓库
   ```
+  # 将修改的文件commit到本地仓库
+  $ git commit -a -m '更新备份的_config.yml文件'
+  
   # git subtree push --prefix=<子目录名> <远程分支名> 分支
   $ git subtree push --prefix=themes/next next master  
+  
+  # git subtree pull --prefix=<子目录名> <远程分支名> 分支
+  $ git subtree pull --prefix=themes/yilia yilia master  --squash
   ```
+  此时可以看到fork的next仓库更新了  
+  ![更新完成](/images/2018/08/6.png)  
