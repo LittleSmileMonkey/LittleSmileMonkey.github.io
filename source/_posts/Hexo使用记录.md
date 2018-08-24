@@ -18,10 +18,25 @@ categories: 开发工具
 
 ### <span id = "2"><font >2. Hexo个性化设置</font></span>
 #### <span id = "2.1"><font >2.1 Hexo个性化设置</font></span>
-
+[参考这里][9433a787]
+  开启emoji  
+  $ npm install hexo-filter-github-emojis --save  
+ 打开站点配置文件 添加一下内容
+ ```
+ githubEmojis:
+  enable: true
+  className: github-emoji
+  unicode: false
+  styles:
+  localEmojis: 
+ ```
+ 附带[表情表][aed4a2e5]
 #### <span id = "2.2"><font >2.2 设置锚点</font></span>
 锚点可以帮我们实现章开头的文章列表跳转效果
 在标题处用如下代码设置锚点：
+
+  [aed4a2e5]: https://www.webfx.com/tools/emoji-cheat-sheet/ "emoji表"
+  [9433a787]: https://novnan.github.io/Hexo/emojis-for-hexo-next/ "Hexo支持emoji"
 
 ```html
     <span id = "2.2"><font >2.2 设置锚点</font></span>

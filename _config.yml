@@ -81,3 +81,11 @@ deploy:
   type: git
   repository: git@github.com:LittleSmileMonkey/LittleSmileMonkey.github.io.git
   branch: master
+# github-emojis
+# https://github.com/crimx/hexo-filter-github-emojis 
+githubEmojis:
+  enable: true
+  className: github-emoji
+  unicode: false
+  styles:
+  localEmojis:
