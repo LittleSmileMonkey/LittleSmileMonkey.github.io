@@ -18,20 +18,27 @@ categories: 开发工具
   接着会在自己的github Repositories中多出一个同名项目    
   ![自己仓库](\images\Hexo多客户端同步问题\2.png)  
 
-2. 清空自己的next目录（如果之前没有clone过可以跳过） 
-  因为之前已经clone过next项目到themes/next中，所以直接操作第三步第二条命令时会出现下面错误  
-  ![  subtree add 报错](\images\Hexo多客户端同步问题\1.png)  
-  尝试删除next文件夹然后执行，会出现下面错误  
-  ![  删除next后报错](/images/2018/08/1.png)  
-  删除本地仓库的themes/next 并提交到远程仓库以保证working tree处于未修改状态
-  ```
-  $ git rm themes/next
-  ```
-3. 添加subtree  
+2. 添加subtree  
   ``` 
   # 添加远程仓库 
   # git remote add -f <子仓库名> <子仓库地址>
-  # -f表示add之后立即执行fetch 
   $ git remote add -f next git@github.com:LittleSmileMonkey/hexo-theme-next.git
   
+  # git subtree add --prefix=<子目录名> <子仓库名> <分支> --squash
+  $ $ git subtree add --prefix=themes/next next master --squash
+  ```
+  此阶段碰到的bug:
+  因为之前已经clone过next项目到themes/next中，所以直接操作第三步第二条命令时会出现下面错误  
+  ![  subtree add 报错](\images\Hexo多客户端同步问题\1.png)  
+  尝试删除next文件夹然后执行（记得将自己修改过的例如_config.yml备份），会出现下面错误  
+  ![  删除next后报错](/images/2018/08/1.png)  
+  删除本地仓库的themes/next 并提交到远程仓库以保证working tree处于未修改状态
+  ![  完成](/images/2018/08/1.png)
+  至此已将自己fork的next主题当成subtree添加到项目中  
+3. 推送next中的修改  
+  其实对整个项目的pull、push同样会对子项目起作用，这里记录一下单独对next子项目进行pull、push操作  
+  我们将目录中的next/_config.yml替换为之前备份好的，然后执行下面命令推送到远程仓库
+  ```
+  # git subtree push --prefix=<子目录名> <远程分支名> 分支
+  $ git subtree push --prefix=themes/next next master  
   ```
