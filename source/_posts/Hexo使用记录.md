@@ -2,6 +2,7 @@
 title: Hexo使用记录
 date: 2018-08-23 16:35:55
 tags: Hexo
+categories: 开发工具
 ---
 
 - <a href="#1" target="_self">1. Hexo安装&部署</a>
@@ -31,5 +32,8 @@ tags: Hexo
     <a href="#2.2" target="_self">点击示例</a>
 ```
 href:填写要跳转锚点处定义的id（锚点处的id可以随便设置，此处我设置为2.2），
-target:表示浏览器跳转锚点的不同行为，具体区别可以[参照这里](http://www.w3school.com.cn/tags/att_a_target.asp)
-ps:这里推荐一款mark
+target:表示浏览器跳转锚点的不同行为，具体区别可以[参照这里](http://www.w3school.com.cn/tags/att_a_target.asp)   
+ps:这里推荐一款markdown编辑器[Atom][2f255e98],附带一份[自己的使用记录][8ce4df2e]。
+
+  [2f255e98]: https://atom.io/ "Atom"
+  [8ce4df2e]: http://sleepym09.com/2018/08/24/Atom%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/ "Atom使用记录"
