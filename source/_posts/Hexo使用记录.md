@@ -21,7 +21,7 @@ categories: 开发工具
 [参考这里][9433a787]
   开启emoji  
   $ npm install hexo-filter-github-emojis --save  
- 打开站点配置文件 添加一下内容
+ 打开站点配置文件 添加以下内容
  ```
  githubEmojis:
   enable: true
