@@ -8,7 +8,7 @@ categories: 开发工具
   
 > A hackable text editor for the 21st Century  
 
-haha ,看起来叼叼哒，用起来也很爽，本文记录一下平时使用的一些小技巧以及比较好用的插件
+haha ,看起来叼叼哒，用起来也很爽，本文记录一下平时使用的一些小技巧以及比较好用的插件。
 
 <!-- more -->
 #### 安装使用  

@@ -4,7 +4,8 @@ date: 2018-08-24 11:42:16
 tags: Hexo
 categories: 开发工具
 ---
->在家里同步github上的博客源码时发现无法同步themes/next,本文主要记录用git subtree解决该问题(其他theme方法相同)，对于Git使用不太熟悉的朋友>可以看下[这篇文章 ][5421a066]
+>在家里同步github上的博客源码时发现无法同步themes/next,本文主要记录用git subtree解决该问题(其他theme方法相同)，对于Git使用不太熟悉的朋友
+>可以看下[这篇文章 ][5421a066]
 
   [5421a066]: http://iissnan.com/progit/ "Pro Git"
 ### 原因  
