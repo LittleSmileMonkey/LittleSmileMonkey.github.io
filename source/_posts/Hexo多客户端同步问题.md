@@ -4,6 +4,8 @@ tags: Hexo
 categories: Tools
 abbrlink: 9f9d3eee
 date: 2018-08-24 11:42:16
+keywords: Hexo 多端同步 主题同步 next同步
+description: Hexo基于git subtree的themes多端同步解决方法
 ---
 >在家里同步github上的博客源码时发现无法同步themes/next,本文主要记录用git subtree解决该问题(其他theme方法相同)，对于Git使用不太熟悉的朋友
 >可以看下[这篇文章 ][5421a066]
@@ -11,7 +13,6 @@ date: 2018-08-24 11:42:16
   [5421a066]: http://iissnan.com/progit/ "Pro Git"
 ### 原因  
 next的集成文章中是用clone方法来使用的，而git无法直接管理这样的嵌套模块。  
-<!-- more -->
 ### 解决
 ######  方案一： 简单粗暴解决 
   直接删掉next/.git文件夹，将next当成普通的文件加入到版本控制当中，但是这样操作之后无法更新next主题。

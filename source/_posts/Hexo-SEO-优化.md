@@ -5,7 +5,7 @@ categories: Tools
 abbrlink: '1e319277'
 date: 2018-08-27 16:45:18
 keywords: Hexo SEO 优化 搜索排名 sitemap
-description: Hexo SEO优化方法，sitemap上传方法
+description: Hexo SEO优化方法，Google sitemap上传
 ---
 
 ### 添加自己的网站到搜索引擎
@@ -17,7 +17,6 @@ $ npm install hexo-generator-baidu-sitemap --save
 ```
 在站点目录下的_config.yml添加以下内容  
 
-<!-- more -->
 ```
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -57,9 +56,16 @@ Sitemap: http://sleepym09.com/baidusitemap.xml
   [b9d0c5c3]: https://search.google.com/search-console "Google站长工具"
   [730d921f]: https://ziyuan.baidu.com/site/siteadd "百度站长平台"
 根据各平台的规则添加站点资源，这里以Google为例 
-![Google添加站点](\images\Hexo-SEO-优化\1.png)  
-验证通过之后
+![验证通过之后](\images\Hexo-SEO-优化\1.png)  
+
 ### Hexo优化 
+#### next开启seo优化
+在主题配置文件（`themes/_config.yml`）中修改
+```
+# seo: false
+seo: true
+```
+开启的时候会导致站点配置文件的description配置失效，此时Sidebar的签名将由`signature`代替([Github Issue][381d0f36])
 #### 添加关键字  
 修改模板`scaffolds\post.md`，添加 keywords 和 description 字段  
 ```
@@ -109,3 +115,4 @@ abbrlink:
 参考链接 [www.arao.me][2dc15000]
 
   [2dc15000]: http://www.arao.me/2015/hexo-next-theme-optimize-seo/ "Hexo SEO 优化"
+  [381d0f36]: https://github.com/iissnan/hexo-theme-next/issues/1484#issuecomment-284316969 "不显示 description"

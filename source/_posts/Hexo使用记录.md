@@ -13,7 +13,6 @@ description: Hexo使用记录、个性化设置
     - <a href="#2.1" target="_self">2.1 开启emoji</a>
     - <a href="#2.2" target="_self">2.2 设置锚点</a>
 
-<!-- more -->
 ### <span id = "1"><font >1. Hexo安装&部署</font></span>
 
 #### <span id = "1.2"><font >1.2 Github配置</font></span>  

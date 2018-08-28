@@ -5,14 +5,14 @@ categories: Android
 abbrlink: '87276193'
 date: 2018-08-27 14:45:33
 keywords: 序列化 Assets 指定外部目录
-description: Android assets创建、使用，指定外部文件夹为assets目录
+description: Android Assets 使用、指定外部目录为Assets目录
 ---
 ### 创建assets文件夹
 
 ![在AS中创建assets文件夹](https://user-gold-cdn.xitu.io/2018/7/23/164c6616442c2f81?w=823&h=529&f=png&s=90565)  
 并且会更改对应module的.iml文件，生成`<sourceFolder url="file://$MODULE_DIR$/src/main/assets" type="java-resource" />`和`<option name="ASSETS_FOLDER_RELATIVE_PATH" value="src/main/assets" />`
 ，其中file://后面是assets文件的绝对路径。  
-<!-- more -->  
+
 有时候会碰到创建了Assets并放入文件，但是打包之后无法读取的情况，这个时候我们可以看看apk结构，看assets是否被打包进Apk，例如：
 ![APK结构](https://user-gold-cdn.xitu.io/2018/7/23/164c66d9340e854a?w=1419&h=252&f=png&s=30008)
 如果在Apk中没有发现assets，则需要检查.iml里的配置是否正确。  
