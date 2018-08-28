@@ -1,7 +1,7 @@
 ---
 title: Hexo多客户端同步问题
 tags: Hexo
-categories: 开发工具
+categories: Tools
 abbrlink: 9f9d3eee
 date: 2018-08-24 11:42:16
 ---

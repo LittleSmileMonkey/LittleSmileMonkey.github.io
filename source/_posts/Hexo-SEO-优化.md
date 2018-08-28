@@ -4,6 +4,8 @@ tags: Hexo
 categories: Tools
 abbrlink: '1e319277'
 date: 2018-08-27 16:45:18
+keywords: Hexo SEO 优化 搜索排名 sitemap
+description: Hexo SEO优化方法，sitemap上传方法
 ---
 
 ### 添加自己的网站到搜索引擎
@@ -13,8 +15,9 @@ date: 2018-08-27 16:45:18
 $ npm install hexo-generator-sitemap --save
 $ npm install hexo-generator-baidu-sitemap --save
 ```
-<!-- more -->
 在站点目录下的_config.yml添加以下内容  
+
+<!-- more -->
 ```
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -80,3 +83,29 @@ abbrlink:
   alg: crc32  # 算法：crc16(default) and crc32
   rep: hex    # 进制：dec(default) and hex
 ```
+#### 给非友情链接的出站链接添加`nofollow`标签
+修改`themes/next/layout/_partials/footer.swig`
+```swig
+{# 修改此处,"{# #}"是swig中的注释语法 #}
+{# {{ __('footer.powered', '<a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a>') }} #}
+{{ __('footer.powered', '<a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a>') }}
+
+...
+
+{# <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next"> #}
+<a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+```
+修改`themes/next/layout/_macro/sidebar.swig`  
+```swig
+{# <a href="https://creativecommons.org/{% if theme.creative_commons === 'zero' %}publicdomain/zero/1.0{% else %}licenses/{{ theme.creative_commons }}/4.0{% endif %}/" class="cc-opacity" target="_blank"> #}
+<a href="https://creativecommons.org/{% if theme.creative_commons === 'zero' %}publicdomain/zero/1.0{% else %}licenses/{{ theme.creative_commons }}/4.0{% endif %}/" class="cc-opacity" target="_blank" rel="external nofollow">
+
+...
+
+{# <a href="{{ link }}" title="{{ name }}" target="_blank">{{ name }}</a> #}
+<a href="{{ link }}" target="_blank" rel="external nofollow">{{ name }}</a>
+
+```
+参考链接 [www.arao.me][2dc15000]
+
+  [2dc15000]: http://www.arao.me/2015/hexo-next-theme-optimize-seo/ "Hexo SEO 优化"

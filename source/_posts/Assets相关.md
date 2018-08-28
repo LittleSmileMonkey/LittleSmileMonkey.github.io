@@ -1,9 +1,11 @@
 ---
 title: Assets相关
-tags: Android
+tags: assets
 categories: Android
 abbrlink: '87276193'
 date: 2018-08-27 14:45:33
+keywords: 序列化 Assets 指定外部目录
+description: Android assets创建、使用，指定外部文件夹为assets目录
 ---
 ### 创建assets文件夹
 

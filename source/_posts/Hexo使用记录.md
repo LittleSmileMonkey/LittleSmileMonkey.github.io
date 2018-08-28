@@ -4,6 +4,8 @@ tags: Hexo
 categories: Tools
 abbrlink: '472738e0'
 date: 2018-08-23 16:35:55
+keywords: Hexo 个性化设置 
+description: Hexo使用记录、个性化设置
 ---
 
 - <a href="#1" target="_self">1. Hexo安装&部署</a>
