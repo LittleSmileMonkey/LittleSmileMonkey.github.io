@@ -66,6 +66,9 @@ target:表示浏览器跳转锚点的不同行为，具体区别可以[参照这
 $ hexo clean
 $ hexo s
 ```
+参考链接：  
+[https://segmentfault.com/a/1190000013660164#articleHeader18](https://segmentfault.com/a/1190000013660164#articleHeader18)  
+[https://www.jianshu.com/p/9f0e90cc32c2](https://www.jianshu.com/p/9f0e90cc32c2)
 
   [02a195c0]: https://juejin.im/entry/5a574864f265da3e3c6c1217 "Hexo搭建"
   [aed4a2e5]: https://www.webfx.com/tools/emoji-cheat-sheet/ "emoji表"
