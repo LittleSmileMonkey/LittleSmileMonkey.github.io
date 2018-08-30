@@ -29,6 +29,7 @@ sitemap:
 baidusitemap:
   path: baidusitemap.xml
 ```
+<!-- more -->
 在source文件夹下添加robots.txt  
 ```
 User-agent: *

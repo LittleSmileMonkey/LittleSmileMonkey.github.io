@@ -10,6 +10,7 @@ description: Android Assets 使用、指定外部目录为Assets目录
 ### 创建assets文件夹
 
 ![在AS中创建assets文件夹](https://user-gold-cdn.xitu.io/2018/7/23/164c6616442c2f81?w=823&h=529&f=png&s=90565)  
+<!-- more -->
 并且会更改对应module的.iml文件，生成`<sourceFolder url="file://$MODULE_DIR$/src/main/assets" type="java-resource" />`和`<option name="ASSETS_FOLDER_RELATIVE_PATH" value="src/main/assets" />`
 ，其中file://后面是assets文件的绝对路径。  
 

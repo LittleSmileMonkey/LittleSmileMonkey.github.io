@@ -12,7 +12,9 @@ description: Hexo基于git subtree的themes多端同步解决方法
 
   [5421a066]: http://iissnan.com/progit/ "Pro Git"
 ### 原因  
-next的集成文章中是用clone方法来使用的，而git无法直接管理这样的嵌套模块。  
+next的集成文章中是用clone方法来使用的，而git无法直接管理这样的嵌套模块。 
+
+<!-- more --> 
 ### 解决
 ######  方案一： 简单粗暴解决 
   直接删掉next/.git文件夹，将next当成普通的文件加入到版本控制当中，但是这样操作之后无法更新next主题。

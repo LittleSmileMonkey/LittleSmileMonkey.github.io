@@ -9,13 +9,16 @@ description: Hexo使用记录、个性化设置
 ---
 
 - <a href="#1" target="_self">1. Hexo安装&部署</a>
+  - <a href="#1.1" target="_self">1.1 Github配置</a>
 - <a href="#2" target="_self">2. Hexo个性化设置</a>
     - <a href="#2.1" target="_self">2.1 开启emoji</a>
     - <a href="#2.2" target="_self">2.2 设置锚点</a>
+    - <a href="#2.3" target="_self">2.3 实现fork me on github</a>
 
+<!-- more -->
 ### <span id = "1"><font >1. Hexo安装&部署</font></span>
 
-#### <span id = "1.2"><font >1.2 Github配置</font></span>  
+#### <span id = "1.1"><font >1.1 Github配置</font></span>  
 具体配置可以参考 [这篇文章][02a195c0],写的很详细。
 
 ### <span id = "2"><font >2. Hexo个性化设置</font></span>
@@ -47,6 +50,15 @@ description: Hexo使用记录、个性化设置
 ```
 href:填写要跳转锚点处定义的id（锚点处的id可以随便设置，此处我设置为2.2），
 target:表示浏览器跳转锚点的不同行为，具体区别可以[参照这里](http://www.w3school.com.cn/tags/att_a_target.asp)   
+
+#### <span id = "2.3"><font >2.3 实现fork me on github</font></span>
+1. 在[GitHub Ribbon](https://blog.github.com/2008-12-19-github-ribbons/)s或[GitHub Corners](http://tholman.com/github-corners/)选择一款你喜欢的挂饰，拷贝方框内的代码
+2. 复制刚刚copy到的代码添加到`next/layout/_layout.swig`文件中
+  ```
+  <div class="{{ container_class }} {% block page_class %}{% endblock %}">
+    <div class="headband"></div>
+    <!-- 添加在这里 -->
+  ```
 
   [02a195c0]: https://juejin.im/entry/5a574864f265da3e3c6c1217 "Hexo搭建"
   [aed4a2e5]: https://www.webfx.com/tools/emoji-cheat-sheet/ "emoji表"
