@@ -60,6 +60,13 @@ target:表示浏览器跳转锚点的不同行为，具体区别可以[参照这
     <!-- 添加在这里 -->
   ```
 
+#### <span id = "2.4"><font >2.4 修改底部标签样式</font></span>
+修改`themes\next\layout\_macro\post.swig`文件中，搜索`rel="tag">#`,将`#`替换成`<i class="fa fa-tag"></i>`，输入一下命令查看效果：
+```
+$ hexo clean
+$ hexo s
+```
+
   [02a195c0]: https://juejin.im/entry/5a574864f265da3e3c6c1217 "Hexo搭建"
   [aed4a2e5]: https://www.webfx.com/tools/emoji-cheat-sheet/ "emoji表"
   [9433a787]: https://novnan.github.io/Hexo/emojis-for-hexo-next/ "Hexo支持emoji"
