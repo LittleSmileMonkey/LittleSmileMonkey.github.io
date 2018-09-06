@@ -21,6 +21,8 @@ Handler: 对消息进行调度、处理
 MessageQueue：消息队列，有插入enqueueMessage()和取出next()等方法，消息队列的消息是按待处理时间排序的。  
 ActivityThread：app主线程(UI线程)，main函数中会初始化Handler、并调用Looper.loop()。
 
+<!-- more -->
+
 ##### 从使用方式看源码  
 在开发中我们是这样使用Handler的：
 ```java
