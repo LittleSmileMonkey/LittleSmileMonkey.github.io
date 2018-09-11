@@ -1,5 +1,5 @@
 ---
-title: Android序列化
+title: Android序列化（未完）
 tags: 序列化
 categories: Android
 keywords: 序列化 Serialize Parcelable
