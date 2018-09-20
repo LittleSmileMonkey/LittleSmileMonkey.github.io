@@ -6,4 +6,4 @@ tags: Git
 keywords: Git Flow使用 gitflow使用记录
 description: 记录git flow使用
 ---
-> 入门参考 
+> 入门参考Git与GitFlow两篇文章
