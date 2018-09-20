@@ -1,10 +1,11 @@
 ---
 title: Handler源码分析（未完）
 categories: 源码分析
-date: 2018-09-02 22:13:57
 tags: Handler
 keywords: Android Handler 源码分析
-description: 
+abbrlink: 3e1578ca
+date: 2018-09-02 22:13:57
+description:
 ---
 涉及到四个类：Looper、Handler、MessageQueue 、ActivityThread 
 Looper：最核心的类，循环取出消息，ThreadLocal<Looper>来保证Looper和Thread一一对应、并初始化与Thread对应的MessageQueue，没有消息时阻塞在MessageQueue.next()中
