@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="SleepYM09`s blog">
 <meta property="og:description" content="介绍Android单元测试">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T23:53:33.922Z">
+<meta property="og:updated_time" content="2018-10-11T09:42:53.347Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单元测试">
 <meta name="twitter:description" content="介绍Android单元测试">
@@ -402,8 +402,13 @@
 <h6 id="测试框架能够提高测试效率"><a href="#测试框架能够提高测试效率" class="headerlink" title="测试框架能够提高测试效率"></a>测试框架能够提高测试效率</h6><p>  <a href="https://junit.org/junit4/" target="_blank" rel="noopener">JUnit</a>：能够直接在PC上执行(断言工具可使用AssertJ)；<br>  AndroidTest：需要依赖Android设备；<br>  <a href="http://robolectric.org/" target="_blank" rel="noopener">Robolectric</a>：在不需要依赖Android环境的前提下，实现在PC上直接运行Android的单元测试；<br>  <a href="https://github.com/RobotiumTech/robotium" target="_blank" rel="noopener">Robotium</a>：第三方UI测试框架；<br>  <a href="https://developer.android.com/training/testing/espresso/" target="_blank" rel="noopener">Espresso</a>：Google退出的UI测试框架；<br>  <a href="https://developer.android.com/training/testing/ui-automator" target="_blank" rel="noopener">UI Automator</a>：流程的UI测试框架； </p>
 <h5 id="3-JUnit框架中的常用方法"><a href="#3-JUnit框架中的常用方法" class="headerlink" title="3. JUnit框架中的常用方法"></a>3. JUnit框架中的常用方法</h5><p>@Before：在每个单元测试方法执行之前调用；<br>@After：在每个单元测试方法执行后调用；<br>@BeforeClass：在每个单元测试类运行前调用；<br>@AfterClass：在每个单元测试类运行完成后调用。<br>Junit3中每个测试方法必须以test打头，Junit4中增加了注解，对方法名没有要求，@Test就可以。  </p>
 <h5 id="4-关于Mock"><a href="#4-关于Mock" class="headerlink" title="4. 关于Mock"></a>4. 关于Mock</h5><p>  在写单元测试的过程中，我们可能会发现需要和系统内的某个模块或系统外某个实体交互，而这些模块或实体在您做单元测试的时候可能并不存在，比如遇到了数据库、遇到了驱动程序等。这时开发人员就需要使用mock技术来完成单元测试。<br>  mock就是创建一个类的虚假的对象，在测试环境中，用来替换掉真实的对象，以达到两个目的：<br>验证这个对象的某些方法的调用情况，调用了多少次，参数是什么等等；<br>指定这个对象的某些方法的行为，返回特定的值，或者是执行特定的动作。<br>  要使用mock技术，就需要使用mock框架，Mockito和Jmockit是android平台两个常用的mock框架，其中Mockito不能mock static method和final class、final method，但Jmockit、powerMockito可以。</p>
-<h5 id="5-多线程单元测试"><a href="#5-多线程单元测试" class="headerlink" title="5. 多线程单元测试"></a>5. 多线程单元测试</h5><h5 id="6-覆盖率"><a href="#6-覆盖率" class="headerlink" title="6. 覆盖率"></a>6. <a href="https://www.jianshu.com/p/b8a7dfefba96" target="_blank" rel="noopener">覆盖率</a></h5><p>  衡量单元测试质量，通过覆盖率测试，可以明确知道哪部分代码已经被单元测试覆盖到，哪部分没有进行单元测试；常用的单元测试插件有Emma（android sdk已内置）、JaCoCo；</p>
-<pre><code>- ./gradlew clean testDebugUnitTest jacocoTestReport
+<h5 id="5-多线程单元测试"><a href="#5-多线程单元测试" class="headerlink" title="5. 多线程单元测试"></a>5. 多线程单元测试</h5><p>  在多线程常常会有异步线程还未执行完，测试线程已经执行exit退出了，可以尝试以下方法来进行多线程单元测试：  </p>
+<ul>
+<li>利用CountDownLatch类来阻塞测试线程，通过异步线程的回调来判断测试是否完成。  </li>
+<li>支持多线程测试的框架例如：<a href="http://testng.org/doc/index.html" target="_blank" rel="noopener">TestNG</a>、<a href="http://groboutils.sourceforge.net/" target="_blank" rel="noopener">GroboUtils</a>   </li>
+</ul>
+<h5 id="6-覆盖率"><a href="#6-覆盖率" class="headerlink" title="6. 覆盖率"></a>6. <a href="https://www.jianshu.com/p/b8a7dfefba96" target="_blank" rel="noopener">覆盖率</a></h5><p>  衡量单元测试质量，通过覆盖率测试，可以明确知道哪部分代码已经被单元测试覆盖到，哪部分没有进行单元测试；常用的单元测试插件有Emma（android sdk已内置）、JaCoCo；  </p>
+<pre><code>- ./gradlew clean testDebugUnitTest jacocoTestReport  
 - ./gradlew jacocoTestReport 
 </code></pre><p>参考：<br>  <a href="https://github.com/OpenDevTeam/OpenBox/blob/master/topic/%5BAndroid%E6%8A%80%E6%9C%AF%E4%B8%93%E9%A2%98%5D%E4%B8%8D%E5%86%99%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%B4%BB%E8%AF%A5%E4%BD%A0%E5%8A%A0%E7%8F%AD.md" target="_blank" rel="noopener">不写单元测试活该你加班</a><br>  <a href="https://www.jianshu.com/p/b8a7dfefba96" target="_blank" rel="noopener">Android代码覆盖率工具使用</a><br>  <a href="https://www.jianshu.com/p/00ab03f3d394" target="_blank" rel="noopener">Android 单元测试实践</a><br>  <a href="https://www.jianshu.com/p/55b0f63820b8" target="_blank" rel="noopener">单元测试-多线程测试</a></p>
 
