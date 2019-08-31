@@ -1,10 +1,11 @@
 ---
 title: SSR使用
 categories: Tools
-date: 2018-11-15 00:16:23
 tags: Tools
 keywords: 多平台SSR使用
-description: 
+abbrlink: 832b0cba
+date: 2018-11-15 00:16:23
+description:
 ---
 ### Windows平台   
 打开Git Bash，根据规则输入下面语句
