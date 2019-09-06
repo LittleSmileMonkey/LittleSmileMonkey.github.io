@@ -95,7 +95,7 @@
 <meta property="og:description" content="OkHttp源码主流程分析">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ww1.sinaimg.cn/mw690/0077sXesly1g4b1kizq1wj30hv1iw787.jpg">
-<meta property="og:updated_time" content="2019-09-06T01:46:16.656Z">
+<meta property="og:updated_time" content="2019-09-06T06:11:07.680Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OkHttp-主流程分析">
 <meta name="twitter:description" content="OkHttp源码主流程分析">
@@ -374,6 +374,7 @@
 <li>okhttp的线程调度机制</li>
 <li>okhttp的连接复用机制</li>
 </ol>
+<a id="more"></a>
 <h4 id="okhttp发送一次请求的完整流程"><a href="#okhttp发送一次请求的完整流程" class="headerlink" title="okhttp发送一次请求的完整流程"></a>okhttp发送一次请求的完整流程</h4><p>从一次最基本的网络请求看Okhttp做了什么<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Request request = <span class="keyword">new</span> Request.Builder()</span><br><span class="line">        .url(<span class="string">"http://127.0.0.1:8080"</span>)</span><br><span class="line">        .build();</span><br><span class="line">OkHttpClient client = <span class="keyword">new</span> OkHttpClient()</span><br><span class="line">        .newBuilder()</span><br><span class="line">        .build();</span><br><span class="line">client.newCall(request).enqueue(<span class="keyword">new</span> Callback() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(Call call, IOException e)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResponse</span><span class="params">(Call call, Response response)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//Response response = client.newCall(request).execute()</span></span><br></pre></td></tr></table></figure></p>
 <p>一次基本的请求涉及到四个类</p>
 <ul>
