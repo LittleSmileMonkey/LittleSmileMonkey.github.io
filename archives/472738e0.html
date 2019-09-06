@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -93,8 +93,8 @@
 <meta property="og:url" content="http://sleepym09.com/archives/472738e0.html">
 <meta property="og:site_name" content="SleepYM09`s blog">
 <meta property="og:description" content="Hexo使用记录、个性化设置">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-20T11:35:34.648Z">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-06T02:04:28.802Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo使用记录">
 <meta name="twitter:description" content="Hexo使用记录、个性化设置">
@@ -113,7 +113,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: '博主'
+      author: 'Author'
     },
     algolia: {
       applicationID: '',
@@ -145,7 +145,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -193,7 +193,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
-            首页
+            Home
           </a>
         </li>
       
@@ -203,7 +203,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
-            关于
+            About
           </a>
         </li>
       
@@ -213,7 +213,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
-            标签
+            Tags
           </a>
         </li>
       
@@ -223,7 +223,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
-            分类
+            Categories
           </a>
         </li>
       
@@ -233,7 +233,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
-            归档
+            Archives
           </a>
         </li>
       
@@ -301,9 +301,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-23T16:35:55+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-23T16:35:55+08:00">
                 2018-08-23
               </time>
             
@@ -322,7 +322,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -376,6 +376,9 @@
 <li><a href="#2.1" target="_self">2.1 开启emoji</a></li>
 <li><a href="#2.2" target="_self">2.2 设置锚点</a></li>
 <li><a href="#2.3" target="_self">2.3 实现fork me on github</a></li>
+<li><a href="#2.4" target="_self">2.4 修改底部标签样式</a></li>
+<li><a href="#2.5" target="_self">2.5 增加按年月分类</a></li>
+<li><a href="#2.6" target="_self">2.6 归档增加月份</a></li>
 </ul>
 </li>
 </ul>
@@ -394,6 +397,11 @@
 </li>
 </ol>
 <h4 id="2-4-修改底部标签样式"><a href="#2-4-修改底部标签样式" class="headerlink" title="2.4 修改底部标签样式"></a><span id="2.4"><font>2.4 修改底部标签样式</font></span></h4><p>修改<code>themes\next\layout\_macro\post.swig</code>文件中，搜索<code>rel=&quot;tag&quot;&gt;#</code>,将<code>#</code>替换成<code>&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code>，输入一下命令查看效果：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo clean</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo s</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="2-5-分类增加年份"><a href="#2-5-分类增加年份" class="headerlink" title="2.5 分类增加年份"></a><span id="2.5"><font>2.5 分类增加年份</font></span></h4><p>修改<code>themes/next/layout/category.swig</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">for</span> post <span class="keyword">in</span> page.posts %&#125;</span><br><span class="line">  &#123;&#123; post_template.render(post) &#125;&#125;</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure></p>
+<p>为<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">for</span> post <span class="keyword">in</span> page.posts %&#125;</span><br><span class="line"></span><br><span class="line">&#123;# Show year #&#125;</span><br><span class="line">&#123;% set year %&#125;</span><br><span class="line">&#123;% set post.year = date(post.date, <span class="string">'YYYY'</span>) %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% <span class="keyword">if</span> post.year !== year %&#125;</span><br><span class="line">  &#123;% set year = post.year %&#125;</span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"collection-title"</span>&gt;</span><br><span class="line">    &lt;h2 <span class="class"><span class="keyword">class</span></span>=<span class="string">"archive-year motion-element"</span> id=<span class="string">"archive-year-&#123;&#123; year &#125;&#125;"</span>&gt;&#123;&#123; year &#125;&#125;&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line">&#123;# endshow #&#125;</span><br><span class="line"></span><br><span class="line">  &#123;&#123; post_template.render(post) &#125;&#125;</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure></p>
+<p>并在文件末尾添加<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block script_extra %&#125;</span><br><span class="line">  &#123;% <span class="keyword">if</span> theme.use_motion %&#125;</span><br><span class="line">    &lt;script type=<span class="string">"text/javascript"</span> id=<span class="string">"motion.page.archive"</span>&gt;</span><br><span class="line">      $(<span class="string">'.archive-year'</span>).velocity(<span class="string">'transition.slideLeftIn'</span>);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">  &#123;% endif %&#125;</span></span><br><span class="line"><span class="regexp">&#123;% endblock %&#125;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="2-6-归档增加月份"><a href="#2-6-归档增加月份" class="headerlink" title="2.6 归档增加月份"></a><span id="2.6"><font>2.6 归档增加月份</font></span></h4><p>修改<code>themes/next/layout/archive.swig</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">for</span> post <span class="keyword">in</span> page.posts %&#125;</span><br><span class="line"></span><br><span class="line">        &#123;# Show year #&#125;</span><br><span class="line">        &#123;% set year %&#125;</span><br><span class="line">        &#123;% set post.year = date(post.date, <span class="string">'YYYY'</span>) %&#125;</span><br><span class="line"></span><br><span class="line">        &#123;% <span class="keyword">if</span> post.year !== year %&#125;</span><br><span class="line">          &#123;% set year = post.year %&#125;</span><br><span class="line">          &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"collection-title"</span>&gt;</span><br><span class="line">            &lt;&#123;% <span class="keyword">if</span> theme.seo %&#125;h2&#123;% <span class="keyword">else</span> %&#125;h1&#123;% endif %&#125; <span class="class"><span class="keyword">class</span></span>=<span class="string">"archive-year"</span> id=<span class="string">"archive-year-&#123;&#123; year &#125;&#125;"</span>&gt;&#123;&#123; year &#125;&#125;&lt;<span class="regexp">/&#123;% if theme.seo %&#125;h2&#123;% else %&#125;h1&#123;% endif %&#125;&gt;</span></span><br><span class="line"><span class="regexp">          &lt;/</span>div&gt;</span><br><span class="line">        &#123;% endif %&#125;</span><br><span class="line">        &#123;# endshow #&#125;</span><br><span class="line"></span><br><span class="line">        &#123;&#123; post_template.render(post) &#125;&#125;</span><br><span class="line"></span><br><span class="line">      &#123;% endfor %&#125;</span><br></pre></td></tr></table></figure></p>
+<p>为<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
 <p>参考链接：<br><a href="https://segmentfault.com/a/1190000013660164#articleHeader18" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013660164#articleHeader18</a><br><a href="https://www.jianshu.com/p/9f0e90cc32c2" target="_blank" rel="noopener">https://www.jianshu.com/p/9f0e90cc32c2</a></p>
 
       
@@ -424,10 +432,6 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-            
-              <a href="/archives/c869dacb.html" rel="next" title="移动支付-支付宝篇">
-                <i class="fa fa-chevron-left"></i> 移动支付-支付宝篇
-              </a>
             
           </div>
 
@@ -491,10 +495,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
+            Overview
           </li>
         </ul>
       
@@ -516,8 +520,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
-                  <span class="site-state-item-name">日志</span>
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -528,7 +532,7 @@
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
                   <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">分类</span>
+                  <span class="site-state-item-name">categories</span>
                 </a>
               </div>
             
@@ -538,8 +542,8 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
-                  <span class="site-state-item-name">标签</span>
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">tags</span>
                 </a>
               </div>
             
@@ -593,7 +597,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Hexo安装-amp-部署"><span class="nav-number">1.</span> <span class="nav-text">1. Hexo安装&amp;部署</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-Github配置"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 Github配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Hexo个性化设置"><span class="nav-number">2.</span> <span class="nav-text">2. Hexo个性化设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-开启emoji"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 开启emoji</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-设置锚点"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 设置锚点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-实现fork-me-on-github"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 实现fork me on github</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-修改底部标签样式"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 修改底部标签样式</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Hexo安装-amp-部署"><span class="nav-number">1.</span> <span class="nav-text">1. Hexo安装&amp;部署</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-Github配置"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 Github配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Hexo个性化设置"><span class="nav-number">2.</span> <span class="nav-text">2. Hexo个性化设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-开启emoji"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 开启emoji</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-设置锚点"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 设置锚点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-实现fork-me-on-github"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 实现fork me on github</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-修改底部标签样式"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 修改底部标签样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-分类增加年份"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 分类增加年份</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6-归档增加月份"><span class="nav-number">2.6.</span> <span class="nav-text">2.6 归档增加月份</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -626,7 +630,7 @@
 
   <div class="powered-by">
   
-  由 <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+  Powered by <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a>
   </div>
 
 
@@ -635,7 +639,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; 
+  <div class="theme-info">Theme &mdash; 
   
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
   NexT.Gemini</a> v5.1.4</div>
