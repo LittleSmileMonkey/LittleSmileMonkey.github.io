@@ -1,7 +1,7 @@
 ---
 title: SSR使用
 categories: Tools
-tags: Tools
+tags: ssh
 keywords: 多平台SSR使用
 abbrlink: 832b0cba
 date: 2018-11-15 00:16:23

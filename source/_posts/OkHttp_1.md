@@ -1,7 +1,7 @@
 ---
 title: OkHttp-主流程分析
-categories: Tools
-tags: 源码分析
+categories: Android
+tags: OkHttp
 keywords: 源码分析 OkHttp
 description: OkHttp源码主流程分析
 abbrlink: 616e6cce

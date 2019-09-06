@@ -14,6 +14,9 @@ description: Hexo使用记录、个性化设置
     - <a href="#2.1" target="_self">2.1 开启emoji</a>
     - <a href="#2.2" target="_self">2.2 设置锚点</a>
     - <a href="#2.3" target="_self">2.3 实现fork me on github</a>
+    - <a href="#2.4" target="_self">2.4 修改底部标签样式</a>
+    - <a href="#2.5" target="_self">2.5 增加按年月分类</a>
+    - <a href="#2.6" target="_self">2.6 归档增加月份</a>
 
 <!-- more -->
 ### <span id = "1"><font >1. Hexo安装&部署</font></span>
@@ -65,6 +68,69 @@ target:表示浏览器跳转锚点的不同行为，具体区别可以[参照这
 ```
 $ hexo clean
 $ hexo s
+```
+
+#### <span id = "2.5"><font >2.5 分类增加年份</font></span>
+修改`themes/next/layout/category.swig`
+```js
+{% for post in page.posts %}
+  {{ post_template.render(post) }}
+{% endfor %}
+```
+为
+```js
+{% for post in page.posts %}
+
+{# Show year #}
+{% set year %}
+{% set post.year = date(post.date, 'YYYY') %}
+
+{% if post.year !== year %}
+  {% set year = post.year %}
+  <div class="collection-title">
+    <h2 class="archive-year motion-element" id="archive-year-{{ year }}">{{ year }}</h2>
+  </div>
+{% endif %}
+{# endshow #}
+
+  {{ post_template.render(post) }}
+{% endfor %}
+```
+并在文件末尾添加
+```js
+{% block script_extra %}
+  {% if theme.use_motion %}
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  {% endif %}
+{% endblock %}
+```
+
+#### <span id = "2.6"><font >2.6 归档增加月份</font></span>
+修改`themes/next/layout/archive.swig`
+```js
+{% for post in page.posts %}
+
+        {# Show year #}
+        {% set year %}
+        {% set post.year = date(post.date, 'YYYY') %}
+
+        {% if post.year !== year %}
+          {% set year = post.year %}
+          <div class="collection-title">
+            <{% if theme.seo %}h2{% else %}h1{% endif %} class="archive-year" id="archive-year-{{ year }}">{{ year }}</{% if theme.seo %}h2{% else %}h1{% endif %}>
+          </div>
+        {% endif %}
+        {# endshow #}
+
+        {{ post_template.render(post) }}
+
+      {% endfor %}
+```
+为
+```js
+
 ```
 参考链接：  
 [https://segmentfault.com/a/1190000013660164#articleHeader18](https://segmentfault.com/a/1190000013660164#articleHeader18)  

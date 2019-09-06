@@ -1,6 +1,6 @@
 ---
 title: Handler源码分析（未完）
-categories: 源码分析
+categories: Android
 tags: Handler
 keywords: Android Handler 源码分析
 abbrlink: 3e1578ca
