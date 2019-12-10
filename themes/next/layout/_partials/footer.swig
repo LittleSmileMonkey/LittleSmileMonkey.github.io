@@ -21,6 +21,8 @@
   {% endif %}
 </div>
 
+<a href="http://www.miitbeian.gov.cn/">浙公安备 2024601159051号</a>
+
 <!-- 
 {% if theme.footer.powered %}
   <div class="powered-by">{# #}
