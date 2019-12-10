@@ -132,6 +132,10 @@ $ hexo s
 ```js
 
 ```
+
+2.7 hexo 部署到nginx服务器之后，访问报错403
+解决方法(centos)， 修改nginx.conf 中user为root;
+
 参考链接：  
 [https://segmentfault.com/a/1190000013660164#articleHeader18](https://segmentfault.com/a/1190000013660164#articleHeader18)  
 [https://www.jianshu.com/p/9f0e90cc32c2](https://www.jianshu.com/p/9f0e90cc32c2)
