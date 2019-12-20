@@ -21,7 +21,7 @@
   {% endif %}
 </div>
 
-<a href="http://www.miitbeian.gov.cn/">浙公安备 2024601159051号</a>
+<a href="http://www.beian.miit.gov.cn/">浙ICP备19051690号-1</a>
 
 <!-- 
 {% if theme.footer.powered %}
